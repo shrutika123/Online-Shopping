@@ -13,6 +13,13 @@
 	</properties>
 	<dependencies>
 
+		<!-- link bakend project -->
+		<dependency>
+			<groupId>com</groupId>
+			<artifactId>shoppingbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- javaee api -->
 		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 		<dependency>
@@ -29,8 +36,8 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		
-		
+
+
 		<!-- spring -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
@@ -38,8 +45,8 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.3.10.RELEASE</version>
 		</dependency>
-		
-		
+
+
 		<!-- jstl -->
 		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
 		<dependency>
