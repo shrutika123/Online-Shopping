@@ -24,6 +24,8 @@
 
 <script>
 	window.menu = '${title}';
+	
+	window.contextRoot = '${contextRoot}'
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -32,6 +34,8 @@
 <!-- bootstrap simplex theme CSS -->
 <link href="${css}/bootstrap-simplex-theme.css" rel="stylesheet">
 
+<!-- bootstrap data table -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -50,7 +54,7 @@
 		<!-- page content -->
 
 		<div class="content">
-			
+
 			<!-- loading the home content -->
 
 			<c:if test="${userClickHome == true }">
@@ -66,9 +70,10 @@
 			<c:if test="${userClickContact == true }">
 				<%@include file="contact.jsp"%>
 			</c:if>
-			
+
 			<!-- load when only clicks Contact-->
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true  }">
+			<c:if
+				test="${userClickAllProducts == true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 
@@ -78,13 +83,20 @@
 
 		<%@include file="./shared/footer.jsp"%>
 
-		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/jquery.min.js"></script>
-		<script src="${js}/bootstrap.bundle.min.js"></script>
+		<!-- JQUEY -->
 		<script src="${js}/jquery.js"></script>
 
-		<!-- self codede javascript -->
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/bootstrap.min.js"></script>
+		
 
+		<!-- DataTable plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		
+		<!-- DataTable bootstrap script -->
+		<script src="${js}/dataTables.bootstrap4.js"></script>
+
+		<!-- self codede javascript -->
 		<script src="${js}/myapp.js"></script>
 
 	</div>
