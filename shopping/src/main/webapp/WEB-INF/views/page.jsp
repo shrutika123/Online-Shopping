@@ -76,6 +76,15 @@
 				test="${userClickAllProducts == true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
+			
+			<!-- load when only clicks show product-->
+			<c:if
+				test="${userClickShowProduct== true }">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
+			
+			
+			
 
 		</div>
 
@@ -91,7 +100,7 @@
 		
 
 		<!-- DataTable plugin -->
-		<script src="${js}/jquery.dataTables.js"></script>
+		<script src="${js}/jquery.dataTables.min.js"></script>
 		
 		<!-- DataTable bootstrap script -->
 		<script src="${js}/dataTables.bootstrap4.js"></script>

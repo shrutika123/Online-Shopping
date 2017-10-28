@@ -115,13 +115,9 @@ public class Product {
 		this.purchases = purchases;
 	}
 
-
-
 	public int getViews() {
 		return views;
 	}
-
-
 
 	public void setViews(int views) {
 		this.views = views;

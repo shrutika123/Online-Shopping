@@ -23,12 +23,11 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public Product get(int productId) {
-
 		try {
 
 			return sessionFactory
 					.getCurrentSession()
-					.get(Product.class, Integer.valueOf(productId));
+					.get(Product.class,Integer.valueOf(productId));
 
 		}
 		catch (Exception ex) {
@@ -129,7 +128,9 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public List<Product> getLatestActiveProducts(int count) {
-		return sessionFactory.getCurrentSession().createQuery("FROM Product WHERE active = :active ORDER BY id", Product.class)
+		return sessionFactory
+				.getCurrentSession()
+				.createQuery("FROM Product WHERE active = :active ORDER BY id", Product.class)
 				.setParameter("active", true)
 				.setFirstResult(0)
 				.setMaxResults(count)

@@ -29,23 +29,21 @@ $(function() {
 
 	// execute the below code only where we hav tis table
 
-	if ($table.length) {
+	if($table.length) {
 
 		// console.log('Inside the table!');
 		var jsonUrl = '';
-		if (window.categoryId == '') {
+		if(window.categoryId == '') {
 
 			jsonUrl = window.contextRoot + '/json/data/all/products';
 		}
 
 		else {
 
-			jsonUrl = window.contextRoot + '/json/data/category/'
-					+ window.categoryId + '/products';
+			jsonUrl = window.contextRoot + '/json/data/category/'+ window.categoryId + '/products';
 		}
 
-		$table
-				.DataTable({
+		$table.DataTable({
 
 					lengthMenu : [ [ 3, 5, 10, -1 ],
 							[ '3 Records', '5 Records', '10 Records', 'ALL' ] ],
@@ -60,7 +58,7 @@ $(function() {
 								data : 'code',
 								mRender : function(data, type, row) {
 
-									return '<img src="' +window.contextRoot+ '/resources/images/'+data+'.jpg" class="dataTableImg" />'
+									return '<img src="' +window.contextRoot+'/resources/images/'+data+'.jpg" class="dataTableImg" />';
 								}
 							},
 							{
@@ -76,15 +74,30 @@ $(function() {
 								}
 							},
 							{
-								data : 'quantity'
+								data : 'quantity',
+								mRender: function(data, type, row){
+									if(data < 1){
+										return '<span style="color:red">Out of Stack</span>';
+									}
+								return data;	
+								}
 							},
 							{
 								data : 'id',
 								bSortable : false,
 								mRender : function(data, type, row) {
 									var str = '';
-									str += '<a href="'+ window.contextRoot+ '/show/'+data+ '/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> &#160;'
-									str += '<a href="'+ window.contextRoot+ '/cart/add/'+data+ '/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>'
+									str += '<a href="'+ window.contextRoot+ '/show/'+data+ '/product" class="btn btn-primary"><span class="glyphicons glyphicons-eye-open"></span></a> &#160;';
+									
+									if(row.quqntity < 1){
+										
+										str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicons glyphicons-shopping-cart"></span></span></a>';
+									}else{
+										
+										str += '<a href="'+ window.contextRoot+ '/cart/add/'+data+ '/product" class="btn btn-success"><span class="glyphicons glyphicons-shopping-cart"></span></span></a>';
+									}
+									
+									
 
 									return str;
 

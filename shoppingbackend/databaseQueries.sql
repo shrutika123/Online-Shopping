@@ -11,7 +11,11 @@ CONSTRAINT pk_category_id PRIMARY KEY (id)
 
 );
 
-INSERT INTO category (name, description, image_url, is_active) values('Mobile', 'this the discription of Mobile','CAT_3.png', 'true');
+INSERT INTO category (name, description, image_url, is_active) values('Mobile', 'this the discription of Mobile','Mobile-Phones.jpg', 'true');
+
+INSERT INTO category (name, description, image_url, is_active) values('Laptop', 'this the discription of Laptop','laptop.png', 'true');
+
+INSERT INTO category (name, description, image_url, is_active) values('Television', 'this the discription of Television','television.jpg', 'true');
 
 
 
@@ -55,22 +59,30 @@ is_active boolean,
 category_id int,
 supplier_id int,
 purchases int default 0,
-views int,
+views int default 0,
 constraint pk_product_id primary key (id),
-constraint fk_product_catgory_id foreign key (category_id) references category (id),
+constraint fk_product_category_id foreign key (category_id) references category (id),
 constraint fk_product_supplier_id foreign key (supplier_id) references user_detail (id),
 
 );
 
-insert into product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, puechases)
-values('*********','iphone 5s', 'apple', 'this is one of the best phone', '10000', '5', 'true', '111', '222', '3');
+insert into product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
+values('M_1','Samsung Galaxy J2', 'Samsung', '1 GB RAM | 8 GB ROM | Expandable Upto 128 GB', '10000', '5', 'true', '1', '2', '0','0');
 
-insert into product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, puechases)
-values('*********','iphone 6s', 'apple', 'this is one of the best phone', '15000', '5', 'true', '333', '444', '2');
 
-insert into product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, puechases)
-values('*********','iphone 7s', 'apple', 'this is one of the best phone', '20000', '5', 'true', '555', '666', '1');
+insert into product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
+values('L_1','HP 15 Core i3 6th Gen ', 'HP', 'Intel Core i3 Processor (6th Gen)
+8 GB DDR4 RAM
+DOS Operating System
+1 TB HDD', '31000', '5', 'true', '2', '2', '0','0');
 
+
+insert into product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
+values('T_1','Samsung 80cm (32 inch)', 'Samsung', '10 W Speaker Output Optimal sound
+1366 x 768 HD Ready - Great picture quality
+60 Hz : Standard refresh rate for blur-free picture quality
+2 x HDMI : For set top box and consoles
+1 x USB : Get content from USB drives', '20000', '5', 'true', '3', '2', '0','0');
 
 
 
