@@ -35,7 +35,8 @@
 
 					<c:if test="${userClickCategoryProducts == true}">
 						<script>
-							window.categoryId = '{$category.id}';
+						//changed id to Id
+						window.categoryId = '{$category.Id}';
 						</script>
 
 
@@ -63,24 +64,26 @@
 						<thead>
 
 							<tr>
-								<th></th>
+								<th>image</th>
 								<th>Name</th>
 								<th>Brand</th>
 								<th>Price</th>
 								<th>Qty.Available</th>
-								<th></th>
+								<th>id</th>
 
 							</tr>
 						</thead>
 						<tfoot>
 
 							<tr>
-								<th></th>
+								
+								<th>image</th>
 								<th>Name</th>
 								<th>Brand</th>
 								<th>Price</th>
 								<th>Qty.Available</th>
-								<th></th>
+								<th>id</th>
+
 
 							</tr>
 						</tfoot>

@@ -32,7 +32,7 @@
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- bootstrap simplex theme CSS -->
-<link href="${css}/bootstrap-simplex-theme.css" rel="stylesheet">
+<link href="${css}/bootstrap_readable_theme.css" rel="stylesheet">
 
 <!-- bootstrap data table -->
 <link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
@@ -77,10 +77,16 @@
 				<%@include file="listProducts.jsp"%>
 			</c:if>
 			
-			<!-- load when only clicks show product-->
+			<!-- load only when clicks show product-->
 			<c:if
-				test="${userClickShowProduct== true }">
+				test="${userClickShowProduct == true }">
 				<%@include file="singleProduct.jsp"%>
+			</c:if>
+			
+			<!-- load only when clicks manage product-->
+			<c:if
+				test="${userClickManageProducts == true }">
+				<%@include file="manageProducts.jsp"%>
 			</c:if>
 			
 			
@@ -100,7 +106,7 @@
 		
 
 		<!-- DataTable plugin -->
-		<script src="${js}/jquery.dataTables.min.js"></script>
+		<script src="${js}/jquery.dataTables.js"></script>
 		
 		<!-- DataTable bootstrap script -->
 		<script src="${js}/dataTables.bootstrap4.js"></script>
