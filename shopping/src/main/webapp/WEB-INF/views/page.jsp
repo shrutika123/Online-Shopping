@@ -110,6 +110,10 @@
 		
 		<!-- DataTable bootstrap script -->
 		<script src="${js}/dataTables.bootstrap4.js"></script>
+		
+		<!--bootbox -->
+		<script src="${js}/bootbox.min.js"></script>
+		
 
 		<!-- self codede javascript -->
 		<script src="${js}/myapp.js"></script>
