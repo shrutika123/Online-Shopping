@@ -207,7 +207,7 @@ $(function() {
 									
 									var str = '';
 									
-									str += '<a href="${contextRoot}/manage/'+data+'/product" class="btn btn-warning">';
+									str += '<a href="'+window.contextRoot+'/manage/'+ data +'/product" class="btn btn-warning">';
 									str +='<span class="glyphicon glyphicon-pencil"></span></a>';
 									
 									return str;
@@ -265,5 +265,47 @@ $(function() {
 				});
 		}
 
+	//-----------------------------------------
+	//validation code for category
+	
+	var $categoryForm= $('#categoryForm');
+	if($categoryForm.length){
+		
+		$categoryForm.validate({
+		
+			rules : {
+				
+				name : {
+					
+					required: true,
+					minlength: 2
+				},
+				description :{
+					required : true
+				}
+				
+			},
+			message : {
+				name : {
+					required: 'Please add the category name!',
+					minlength: 'the category name should not less than 2 characters!'
+					
+				},
+				description : {
+					required : 'please add adescription for this category'
+				}
+				
+			},
+			errorElement : 'em',
+			erroePlacement : function(error, element){
+				//add the class of help-block
+				error.addClass('help-block');
+				//add the error element after the input element
+				error.insertAfter(element);
+			}
+			
+		});
+		
+	}
 
 });

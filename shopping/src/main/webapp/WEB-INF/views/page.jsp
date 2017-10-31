@@ -100,6 +100,9 @@
 
 		<!-- JQUEY -->
 		<script src="${js}/jquery.js"></script>
+		
+		<!-- JQUEY  VALIDATION-->
+		<script src="${js}/jquery.validate.js"></script>
 
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
