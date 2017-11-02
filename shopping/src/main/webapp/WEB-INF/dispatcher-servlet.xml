@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:wf="http://www.springframework.org/schema/webflow-config"
@@ -49,14 +49,15 @@
 
 
 	<wf:flow-builder-services id="flowBuilderServices"
-		view-factory-creator="viewFactoryCreator" />
+		view-factory-creator="viewFactoryCreator" validator="validator" />
 
 	<bean class="org.springFramework.webflow.mvc.servlet.FlowHandlerAdapter">
 		<property name="flowExecutor" ref="flowExecutor"></property>
 	</bean>
 
 	<bean class="org.springFramework.webflow.mvc.servlet.FlowHandlerMapping">
-		<property name="flowRegistry" ref="flowRegistry"></property>
+		<property name="flowRegistry" ref="flowRegistry" />
+		<property name="order" value="-1" />
 	</bean>
 
 	<bean id="viewFactoryCreator"
@@ -64,7 +65,8 @@
 		<property name="viewResolvers" ref="viewResolver" />
 	</bean>
 
-
+	<!-- validator bean -->
+	<bean id="org.springFramework.validation.beanvalidation.LocalValidatorFactoryBean" />
 
 
 

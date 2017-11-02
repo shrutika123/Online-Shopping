@@ -1,5 +1,7 @@
 package com.shoppingbackend.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,8 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
-public class Address {
+public class Address implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * private field
@@ -31,13 +40,19 @@ public class Address {
 	}
 
 	@Column(name = "addredd_line_one")
+	@NotBlank(message="please enter Address line one!")
 	private String addressLineOne;
 	@Column(name = "addredd_line_two")
+	@NotBlank(message="please enter Address line two!")
 	private String addressLineTwo;
+	@NotBlank(message="please enter city name!")
 	private String city;
+	@NotBlank(message="please enter state name!")
 	private String state;
+	@NotBlank(message="please enter country name!")
 	private String country;
 	@Column(name = "postal_code")
+	@NotBlank(message="please enter postal code!")
 	private String postalCode;
 	private boolean shipping;
 	private boolean billing;
@@ -123,6 +138,11 @@ public class Address {
 		return "Address [id=" + id + ", addressLineOne=" + addressLineOne + ", addressLineTwo="
 				+ addressLineTwo + ", city=" + city + ", state=" + state + ", country=" + country + ", postalCode="
 				+ postalCode + ", shipping=" + shipping + ", billing=" + billing + "]";
+	}
+
+	public void setUserId(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
