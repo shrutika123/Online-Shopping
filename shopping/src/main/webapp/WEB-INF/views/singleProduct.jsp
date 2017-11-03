@@ -61,24 +61,29 @@
 			</c:choose>
 			
 			
-			
+			<security:authorize access="hasAuthority('USER')">
 			<c:choose>
 
 				<c:when test="${product.quantity < 6}">
 
-					<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicons glyphicons-shopping-cart"></span><strike>Add to Cart</strike></a>
+					<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span><strike>Add to Cart</strike></a>
 
 				</c:when>
 				<c:otherwise>
 
-					<a href="${contextRoot}/cart/add/${product.id}/product" class="btn btn-success"><span class="glyphicons glyphicons-shopping-cart"></span>Add to Cart</a>
+					<a href="${contextRoot}/cart/add/${product.id}/product" class="btn btn-success"><span class="glyphicons glyphicon-shopping-cart"></span>Add to Cart</a>
 
 				</c:otherwise>
 			</c:choose>
+				</security:authorize>
 
-
+			<security:authorize access="hasAuthority('ADMIN')">
 			
-				 <a href="${contextRoot}/show/all/products" class="btn btn-primary"><span class="glyphicons glyphicons-step-backward"></span>back</a>
+				<a href="${contextRoot}/manage/${product.id}/product" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+				
+			</security:authorize>
+				
+				 <a href="${contextRoot}/show/all/products" class="btn btn-primary"><span class="glyphicon glyphicon-step-backward"></span>back</a>
 
 		</div>
 

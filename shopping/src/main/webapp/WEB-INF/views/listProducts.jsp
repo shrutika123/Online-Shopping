@@ -35,8 +35,8 @@
 
 					<c:if test="${userClickCategoryProducts == true}">
 						<script>
-						//changed id to Id
-						window.categoryId = '{$category.Id}';
+							//changed id to Id
+							window.categoryId = '{$category.Id}';
 						</script>
 
 
@@ -58,39 +58,50 @@
 
 				<div class="col-xs-12">
 
-					<table id="productListTable"
-						class="table table-striped table-borderd">
+					<div class="container-fluid">
+						<div class="table-responsive">
 
-						<thead>
+							<table id="productListTable"
+								class="table table-striped table-borderd">
 
-							<tr>
-								<th>image</th>
-								<th>Name</th>
-								<th>Brand</th>
-								<th>Price</th>
-								<th>Qty.Available</th>
-								<th>id</th>
+								<thead>
 
-							</tr>
-						</thead>
-						<tfoot>
+									<tr>
+										<th>image</th>
+										<th>Name</th>
+										<th>Brand</th>
+										<th>Price</th>
+										<th>Qty.Available</th>
+										<th>id</th>
 
-							<tr>
-								
-								<th>image</th>
-								<th>Name</th>
-								<th>Brand</th>
-								<th>Price</th>
-								<th>Qty.Available</th>
-								<th>id</th>
+									</tr>
+								</thead>
+								<tfoot>
 
+									<tr>
 
-							</tr>
-						</tfoot>
-
+										<th>image</th>
+										<th>Name</th>
+										<th>Brand</th>
+										<th>Price</th>
+										<th>Qty.Available</th>
+										<th>id</th>
 
 
-					</table>
+									</tr>
+								</tfoot>
+
+
+
+							</table>
+
+
+
+						</div>
+
+
+					</div>
+
 
 
 				</div>

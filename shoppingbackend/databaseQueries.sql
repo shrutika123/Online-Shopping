@@ -26,7 +26,7 @@ first_name VARCHAR(50),
 last_name VARCHAR(50),
 role VARCHAR(50),
 enabled BOOLEAN,
-password VARCHAR(50),
+password VARCHAR(60),
 email VARCHAR(100),
 contact_number VARCHAR(15),
 CONSTRAINT pk_user_id PRIMARY KEY(id),
@@ -35,15 +35,15 @@ CONSTRAINT pk_user_id PRIMARY KEY(id),
 
 INSERT INTO user_detail
 (first_name, last_name, role, enabled, password, email, contact_number)
-VALUES('shrutika', 'mohite', 'ADMIN', 'true', 'admin', 'shrutikamohite@gmail.com', '123456789');
+VALUES('shrutika', 'mohite', 'ADMIN', 'true', '$2b$10$Cs8nianbLwU.tVQCoMuvt.HqOT0WiVENlc5els.NhCO21Nzj2kyYK', 'shrutikamohite@gmail.com', '123456789');
 
 INSERT INTO user_detail
 (first_name, last_name, role, enabled, password, email, contact_number)
-VALUES('prashant', 'desai', 'SUPPLIER', 'true', 'supplier', 'prashantdesai@gmail.com', '123456789');
+VALUES('prashant', 'desai', 'SUPPLIER', 'true', '$2b$10$YIJ2K9KIWWEJEuldBkdJjusVe39s7OhqMiWCw9P2PQ0dHIbCLwLj6', 'prashantdesai@gmail.com', '123456789');
 
 INSERT INTO user_detail
 (first_name, last_name, role, enabled, password, email, contact_number)
-VALUES('chinu', 'mohite', 'SUPPLIER', 'true', 'Supplier', 'chinumohite@gmail.com', '123456789');
+VALUES('chinu', 'mohite', 'SUPPLIER', 'true', '$2b$10$YIJ2K9KIWWEJEuldBkdJjusVe39s7OhqMiWCw9P2PQ0dHIbCLwLj6', 'chinumohite@gmail.com', '123456789');
 
 
 CREATE TABLE product(
@@ -84,6 +84,21 @@ values('T_1','Samsung 80cm (32 inch)', 'Samsung', '10 W Speaker Output Optimal s
 2 x HDMI : For set top box and consoles
 1 x USB : Get content from USB drives', '20000', '5', 'true', '3', '2', '0','0');
 
+----------------------------------------
+
+create table cart_line (
+id identity,
+cart_id int,
+total decimal(10,2),
+product_id int,
+product_count int,
+buying_price decimal(10,2),
+is_available boolean,
+constraint fk_cartline_cart_id foreign key (cart_id) references cart (id),
+constraint fk_cartline_product_id foreign key (product_id) references product (id),
+constraint fk_cartline_id primary key (id)
+
+);
 
 
 
