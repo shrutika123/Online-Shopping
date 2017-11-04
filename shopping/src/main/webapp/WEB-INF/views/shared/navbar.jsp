@@ -56,7 +56,7 @@
 					
 					 ${userModel.fullName} 
 					
-					<span class="caret"></span>
+					<span class="cart"></span>
 
 						</a>
 						
@@ -65,7 +65,7 @@
 						<security:authorize access="hasAuthority('USER')">
 						
 							<li>
-							<a href="${contextRoot}/cart">
+							<a href="${contextRoot}/cart/show">
 							<span class="glyphicon glyphicon-shopping-cart"></span>
 							<span class="badge">${userModel.cart.cartLines}</span>
 							-&#8377; ${userModel.cart.grandTotal}

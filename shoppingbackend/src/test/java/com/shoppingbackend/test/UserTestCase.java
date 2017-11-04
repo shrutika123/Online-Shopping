@@ -210,7 +210,7 @@ public class UserTestCase {
 		
 		user = userDAO.getByEmail("shrutikamohite27@gmail.com");
 		
-		assertEquals("Failes to fetch the list of address and size does not match!",2, 
+		assertEquals("Failes to fetch the list of address and size does not match!",3, 
 				userDAO.listShippingAddress(user).size());
 
 		
